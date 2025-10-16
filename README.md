@@ -1,5 +1,27 @@
 # 🧰 Git Cheatsheet Corporativo
 
+
+---
+
+## ☁️ Inicio repositório e primeiro commit
+| Comando | Descrição |
+|----------|------------|
+| `git init` | Inicializa repositório local. |
+| `git add README.md` | Adiciona um README na pasta local. |
+| `git commit -m "first commit"` | Realiza o commit local. |
+| `git branch -M main` | Renomeia branch atual (normalmente master) para 'main'. |
+| `git remote add origin https://github.com/username/repo.git` | Adiciona um repositório remoto. |
+| `git push -u origin main` | Envia o commit local para o remote 'origin' branch 'main' |
+
+## Ou envia um repositório já existente
+| Comando | Descrição |
+|----------|------------|
+| `git remote add origin https://github.com/username/repo.git` | Adiciona um repositório remoto. |
+| `git branch -M main` | Renomeia branch atual (normalmente master) para 'main'. |
+| `git push -u origin main` | Envia o commit local para o remote 'origin' branch 'main' |
+
+---
+
 ## ⚙️ Configuração Inicial
 | Comando | Descrição |
 |----------|------------|
@@ -123,9 +145,6 @@
 | `git config --global alias.cm "commit -m"` | Atalho para `git commit -m`. |
 | `git config --global alias.lg "log --oneline --graph --decorate --all"` | Histórico resumido e visual. |
 
-
-
-
 ---
 
 # 🧭 Tipos de Commits e Operações no Git
@@ -136,8 +155,8 @@
 |----------------|------------------|-------------------|--------------|------------|
 | **Commit normal** | `git commit -m "mensagem"` | ✅ Sim | A cada mudança estável | Registra alterações no histórico local. |
 | **Commit amend (edição)** | `git commit --amend` | 🆕 Substitui o último | Corrigir última mensagem ou incluir arquivo esquecido | Reescreve o último commit (muda o hash). Não use se já foi enviado. |
-| **Merge commit** | `git merge nome-da-branch` | ✅ Sim (com `--no-ff`) | Quando integra uma branch na atual | Junta duas histórias. Cria commit especial de mesclagem. |
-| **Fast-forward merge** | `git merge nome-da-branch` (sem `--no-ff`) | ❌ Não | Quando branch está linearmente à frente | Apenas move o ponteiro da branch. |
+| **Merge commit** | `git merge nome-da-branch --no-ff` | ✅ Sim | Quando integra uma branch na atual | Junta duas histórias. Cria commit especial de mesclagem. |
+| **Fast-forward merge** | `git merge nome-da-branch` | ❌ Não | Quando branch está linearmente à frente | Apenas move o ponteiro da branch. |
 | **Rebase commit** | `git rebase nome-da-branch` | 🆕 Reescreve commits | Para manter histórico linear | Move commits para “cima” da nova base. |
 | **Interactive rebase** | `git rebase -i HEAD~N` | ✅ (vários) | Para reordenar, juntar ou editar commits | Ferramenta poderosa para limpeza de histórico. |
 | **Revert commit** | `git revert <hash>` | ✅ Sim | Para desfazer alteração já enviada | Cria novo commit que reverte outro — seguro em equipe. |
