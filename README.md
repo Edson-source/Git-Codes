@@ -94,6 +94,7 @@
 | `git pull --rebase` | Atualiza mantendo histórico linear. |
 | `git push -u origin main` | Envia commits para o repositório remoto. |
 | `git push --force-with-lease` | Força envio com segurança. |
+| `git push origin --delete master` | Deleta branch remota. |
 
 ---
 
